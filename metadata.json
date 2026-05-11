@@ -1,0 +1,7 @@
+{
+  "owner": "actions",
+  "name": "first-interaction",
+  "visibility": "internal",
+  "description": "Greet first-time contributors when they open an issue or PR",
+  "block_publish": false
+}
