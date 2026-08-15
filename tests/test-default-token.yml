@@ -1,0 +1,19 @@
+name: Test default token usage
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Run first-interaction action using default token
+        id: action
+        uses: .
+        with:
+          issue_message: "Hello! Welcome to the project. This is your first issue!"
+          pr_message: "Hello! Thanks for your first PR contribution!"
+          # repo_token uses default: ${{ github.token }}
+      - name: Assert action completed without error
+        run: |
+          echo "Action completed successfully using default repo_token"
+          echo "PASS"
