@@ -1,0 +1,27 @@
+name: Test No Optional Messages
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_EVENT_NAME: issues
+      GITHUB_REF: refs/heads/main
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          repo_token: ${{ github.token }}
+        continue-on-error: true
+      - name: Assert action completed without crashing
+        env:
+          OUTCOME: ${{ steps.action.outcome }}
+        run: |
+          echo "action outcome: $OUTCOME"
+          # The action should not crash even when no messages are configured
+          if [ "$OUTCOME" = "failure" ]; then
+            echo "FAIL: action failed unexpectedly when no messages provided"
+            exit 1
+          fi
+          echo "PASS: action completed gracefully with no messages configured"
