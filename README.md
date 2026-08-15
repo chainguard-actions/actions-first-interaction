@@ -10,7 +10,7 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 |---------|-----|-----------------|
 | v2.0.0 | [`v2.0.0`](https://github.com/chainguard-actions/actions-first-interaction/tree/v2.0.0) | — |
 | v3.0.0 | [`v3.0.0`](https://github.com/chainguard-actions/actions-first-interaction/tree/v3.0.0) | — |
-| v3.1.0 | [`v3.1.0`](https://github.com/chainguard-actions/actions-first-interaction/tree/v3.1.0) | — |
+| v3.1.0 | [`v3.1.0`](https://github.com/chainguard-actions/actions-first-interaction/tree/v3.1.0) | [`1c46889`](https://github.com/actions/first-interaction/commit/1c4688942c71f71d4f5502a26ea67c331730fa4d) |
 
 ## Privacy
 
